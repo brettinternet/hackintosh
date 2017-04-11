@@ -1,6 +1,17 @@
-- [Kexts](#Kexts)
-- [Backup](#Backup)
-- [NVRAM](#NVRAM)
+- [SMBIOS](#smbios)
+- [Kexts](#kexts)
+- [Backup](#backup)
+- [NVRAM](#nvram)
+
+# SMBIOS
+
+Generation | iMac | Notes
+:----|:----|:----
+Sandy Bridge | 12,2 |
+Ivy | 13,2 | stable
+Haswell | 14,2 | best NVIDIA support, stable
+Haswell Refresh | 15,1 |
+Skylake | 17,1 | best skylake/kaby support, somewhat stable
 
 # Kexts
 

@@ -45,7 +45,8 @@ sudo "/Applications/Install macOS Sierra.app/Contents/Resources/createinstallmed
 ```
 sudo "/Users/Elk/Desktop/Install macOS Sierra.app/Contents/Resources/createinstallmedia" --volume "/Volumes/USB2" --applicationpath "/Users/Elk/Desktop/Install macOS Sierra.app" --nointeraction
 
-4. Use edited `config.plist` (some edits suggested by CorpNewt for Skylake build) and spoofed iMac 7,1. Copy config to `EFI` partition and replace the default `config.plist` in `/EFI/Clover/`. Some key components of the config are highlighted in this [guide](https://www.reddit.com/r/hackintosh/comments/4pgfmn/does_my_build_look_okay/).
+4. Use edited `example-config.plist` (some edits suggested by CorpNewt for Skylake build) and rename it to `config.plist`. You will need to use Clover Configurator to add iMac 7,1 to the SMBIOS.
+  - Copy config to `EFI` partition and replace the default `config.plist` in `/EFI/Clover/`. Some key components of the config are highlighted in this [Skylake guide](https://www.reddit.com/r/hackintosh/comments/4pgfmn/does_my_build_look_okay/), but they also work for Kaby Lake.
 
 5. Install Clover to USB with these options:
 ```

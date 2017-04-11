@@ -17,7 +17,10 @@ Audio | various audio issues | answered [here](https://www.reddit.com/r/hackinto
 - https://www.tonymacx86.com/threads/success-sierra-win10-i5-7500-ga-h270n-wifi-quadro-k1200-samsung-960pro-nvme-imac17-1.215787/
 - https://www.tonymacx86.com/threads/new-testing-intel-7th-generation-kaby-lake-cpus-200-series-motherboards-in-macos.211743/
 - [CorpNewt Guides](https://corpnewt.com/category/7/guides)
-
+- [HDMI Audio](https://www.tonymacx86.com/threads/audio-hdmi-audio-applehda-guide.143760/)
+  - Use [this](https://github.com/toleda/audio_hdmi_100series/blob/master/%5BGuide%5D_HD5x0-hdmi_audio_(clover_or_ssdt).pdf) which has links to the `config.plist` that contains patches.
+  - You'll have to add 3 `ACPI` edits and some `Devices -> Arbitrary` patches.
+  - Then you need to add this [SSDT](https://github.com/toleda/audio_hdmi_100series/blob/master/ssdt_hdmi_hd5x0/ssdt_hdmi-hd530.zip) to `EFI -> CLOVER -> ACPI -> patched`.
 
 # Additional Guides
 - Replace System Info image - `/Applications/Utilities/System Information.app/Contents/Resources/SystemLogo.tiff` (see [here](http://www.idownloadblog.com/2017/01/13/how-to-modify-about-this-mac-hackintosh/))
