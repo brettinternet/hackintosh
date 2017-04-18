@@ -1,6 +1,23 @@
+- [Clover Theme](#clover-theme)
+- [SMBIOS](#smbios)
 - [Kexts](#kexts)
 - [Backup](#backup)
 - [NVRAM](#nvram)
+- [BIOS settings](#bios-settings)
+
+# Clover Theme
+- [Minimal Clover Theme](https://github.com/theracermaster/clover-minimal)
+![Screenshot of the theme](http://i.imgbox.com/4gssLdSI.png)
+
+# SMBIOS
+
+Generation | iMac | Notes
+:----|:----|:----
+Sandy Bridge | 12,2 |
+Ivy | 13,2 | stable
+Haswell | 14,2 | best NVIDIA support, stable
+Haswell Refresh | 15,1 |
+Skylake | 17,1 | best skylake/kaby support, somewhat stable
 
 # Kexts
 
@@ -60,3 +77,15 @@ nvram -p
 ```
 this will output the contents of NVRAM, if myVar is in there - then it's working.
   - If it's not working - and you don't see myVar in NVRAM - try adding `EmuVariableUefi-64.efi` to `EFI -> CLOVER -> drivers64UEFI` (or if it's already there, try removing it), and then run the above steps again to test.
+
+
+# BIOS settings
++ Load Optimized Defaults
++ If your BIOS has a VT-d setting, disable it
++ If your system has CFG-Lock, disable it
++ If your system has Secure Boot Mode, disable it
++ Set OS Type to Other OS
++ Set XHCI Handoff to Enabled
++ If you have a Serial port, disable it
++ Make sure your BIOS time is accurate
++ set the display to `iGPU` for onboard graphics or `PCI` for a GPU.

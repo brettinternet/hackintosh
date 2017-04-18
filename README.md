@@ -1,4 +1,4 @@
-# A setup reference for my Hackintosh build
+# My Hackintosh build
 * [Hardware](./docs/hardware.md)
 * [Setup](./docs/setup.md)
 * [Troubleshoot](./docs/troubleshoot.md)
@@ -10,29 +10,3 @@ Apple's overpriced offering is moving away from modular, upgradable hardware. So
 Should you build a hackintosh? Probably not. There's a lot of troubleshooting and tinkering involved. But if you're okay with that, then try it out! Check out reddit.com/r/hackintosh, tonymacx86.com and insanelymac.com to start.
 
 ![tosh](./SystemInfo.png)
-
-# Backup
-
-### EFI
-```
-dd if=/dev/diskXsY of=/path/to/backup/efi.img
-```
-
-### HFS
-Time Machine to a separate drive. If that drive is a bootable then you can restore the EFI partition with `dd if=/path/to/backup/efi.img of=/dev/diskXsY`.
-
-You may also consider something like CCC which creates a bootable backup.
-
-
-# Quick Reference
-##### Repair permissions:
-```
-sudo /usr/libexec/repair_packages --repair --standard-pkgs --volume /
-```
-
-##### Rebuild kext cache:
-```
-sudo rm -r /System/Library/Caches/com.apple.kext.caches
-sudo touch /System/Library/Extensions
-sudo kextcache -update-volume /
-```
