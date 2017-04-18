@@ -21,3 +21,4 @@ Audio | various audio issues | answered [here](https://www.reddit.com/r/hackinto
 
 # Additional Guides
 - Replace System Info image - `/Applications/Utilities/System Information.app/Contents/Resources/SystemLogo.tiff` (see [here](http://www.idownloadblog.com/2017/01/13/how-to-modify-about-this-mac-hackintosh/))
+- [Making a copy of IOReg](https://www.tonymacx86.com/threads/guide-how-to-make-a-copy-of-ioreg.58368/)

@@ -1,6 +1,6 @@
-- [Kexts](#Kexts)
-- [Backup](#Backup)
-- [NVRAM](#NVRAM)
+- [Kexts](#kexts)
+- [Backup](#backup)
+- [NVRAM](#nvram)
 
 # Kexts
 
