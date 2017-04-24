@@ -124,3 +124,4 @@ I also had to add the `FakePCIID.kext` and `FakePCIID_Intel_HD_Graphics.kext` to
 1. **Onboard HDMI Audio** - No fix yet
 1. **SSDT** - use this script for power management [here](https://github.com/Piker-Alpha/ssdtPRGen.sh)
 1. **iMessage** - [this guide](https://www.tonymacx86.com/threads/an-idiots-guide-to-imessage.196827/) still works
+1. **Bluetooth** - I bought a BCM94352Z from a Chinese vendor on eBay, it's has support drivers and it fits nicely in the GA-H270-WIFI motherboard M.2 WiFi spot. Add `BrcmFirmwareData.kext`, `BrcmPatchRAM2.kext` ([found here](https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/)), `FakePCIID_Broadcom_WiFi.kext` and `FakePCIID.kext` ([found here](https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/)) to your EFI partition. Follow the advice [here](https://zorrobyte.com/2016/12/26/how-to-bcm94352z-for-hackintosh-including-5ghz-patch-handoff-and-hotspot-macos-sierra/) for editing the `config.plist` for full support.
