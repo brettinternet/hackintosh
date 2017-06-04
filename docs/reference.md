@@ -1,9 +1,18 @@
+- [Updating macOS](#updating-macos)
 - [Clover Theme](#clover-theme)
 - [SMBIOS](#smbios)
 - [Kexts](#kexts)
 - [Backup](#backup)
 - [NVRAM](#nvram)
 - [BIOS settings](#bios-settings)
+
+# Updating macOS
+1. Checkout release notes on tonymacx86.com and read comments to see general issues with upgrading macOS versions.
+1. Upgrade [Clover EFI Bootloader Installer](https://sourceforge.net/projects/cloverefiboot/)
+1. Download and replace the latest [kexts](./setup.md#what-you-need).
+1. Be prepared to troubleshoot
+1. Upgrade in the App Store
+
 
 # Clover Theme
 - [Minimal Clover Theme](https://github.com/theracermaster/clover-minimal)
@@ -22,7 +31,7 @@ Skylake | 17,1 | best skylake/kaby support, somewhat stable
 # Kexts
 
 ### Installing Kexts
-Most kexts should be put in `/EFI/Clover/kexts/other` but some kexts might need to be installed to `/Library/Extensions`. This is preferred over `/System/Library/Extensions`, although both would work on the system.
+Most kexts _should_ be put in `/EFI/Clover/kexts/other` but some kexts might need to be installed to `/Library/Extensions`. Putting kexts in `/L/E` is preferred over `/System/Library/Extensions`, although both would work on the system.
 
 #### Repairing Permissions and Rebuilding Kext Cache
 These are good maintenance tools - they ensure permissions are correct on the boot drive, and that the kext cache is not populated with old, or unused kexts. They are all entered into the Terminal.

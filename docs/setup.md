@@ -17,12 +17,14 @@ Adapted from CorpNewt's Skylake guide: https://www.reddit.com/r/hackintosh/comme
 - [maciASL](https://bitbucket.org/RehabMan/os-x-maciasl-patchmatic/downloads/)
 
 
-- [FakeSMC.kext](https://www.tonymacx86.com/resources/fakesmc.325/) - to convince the OS you have a "real" mac
-- [IntelMausiEthernet.kext](https://bitbucket.org/RehabMan/os-x-intel-network/downloads/) - LAN
-- [AppleALC.kext](https://github.com/vit9696/AppleALC/releases) - onboard Audio
-- [Lilu.kext](https://github.com/vit9696/Lilu/releases) - Audio
-- [USBInjectAll.kext](https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/) - to inject your USB ports - part 1 of the 15 port limit increase to 30
-- [FakePCIID.kext](https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/) - for onboard kabylake graphics (also FakePCIID_Intel_HD_Graphics.kext)
+- Kexts
+  - [FakeSMC.kext](https://www.tonymacx86.com/resources/fakesmc.325/) - to convince the OS you have a "real" mac
+  - [IntelMausiEthernet.kext](https://bitbucket.org/RehabMan/os-x-intel-network/downloads/) - LAN
+  - [AppleALC.kext](https://github.com/vit9696/AppleALC/releases) - onboard Audio
+  - [Lilu.kext](https://github.com/vit9696/Lilu/releases) - Audio
+  - [USBInjectAll.kext](https://bitbucket.org/RehabMan/os-x-usb-inject-all/downloads/) - to inject your USB ports - part 1 of the 15 port limit increase to 30
+  - [FakePCIID.kext](https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/) - for onboard kabylake graphics (also FakePCIID_Intel_HD_Graphics.kext)
+  - [IntelGraphicsFixup.kext](https://www.tonymacx86.com/threads/macos-10-12-5-update.220866/#post-1504116) - for recent 10.12.5 Intel GPU update
 - [HFSPlus.efi](https://github.com/JrCs/CloverGrowerPro/tree/master/Files/HFSPlus/X64) - better than the default VBoxHfs-64.efi
 - [config.plist](http://www.tonymacx86.com/attachments/config-plist.163681/) - from the Skylake Starter Guide - bare-bones config that we will build on or find mine in this repo
 - If you have a an NVIDIA GPU: [NVIDIA Web Driver](http://www.insanelymac.com/forum/topic/306535-nvidia-web-driver-updates-for-el-capitan-update-06062016/) - to enable your GTX card - You must get the correct version for your macOS build version
