@@ -84,7 +84,7 @@ Also, set the display to iGPU for onboard graphics or PCI for a GPU.
 ### Install
 1. Boot from the USB. You may need to change the boot order in the BIOS or choose the USB from the boot menu.
 1. In the Clover boot menu, select `Boot macOS from Install macOS Sierra`.
-1. From within the macOS install, use Disk Utility to format your SSD as `Journaled HFS+`` with a `GUID Partition Table`.
+1. From within the macOS install, use Disk Utility to format your SSD as `Journaled HFS+` with a `GUID Partition Table`.
 1. Install macOS to the formatted drive. **Note:** Some installations are two parts and require a restart. Simply boot from the USB as you did before.
 1. Once installed, boot from the USB again but select macOS HFS drive.
 1. Walk through the setup. Once at the desktop, run the Clover installer package again with the same settings except this time you'll run the installer on the SSD.
@@ -98,9 +98,9 @@ Also, set the display to iGPU for onboard graphics or PCI for a GPU.
 
 
 ### Post-Install
-1. **General Config** - [Clover Configure](https://corpnewt.com/topic/46/how-to-configure-the-clover-config)
-1. **Graphics** - change the following portion of the `config.plist`:
-```
+- **General Config** - [Clover Configure](https://corpnewt.com/topic/46/how-to-configure-the-clover-config)
+- **Graphics** - change the following portion of the `config.plist`:
+```xml
 <key>Graphics</key>
 <dict>
     <key>Inject</key>
@@ -119,9 +119,21 @@ Also, set the display to iGPU for onboard graphics or PCI for a GPU.
 </dict>
 ```
 I also had to add the `FakePCIID.kext` and `FakePCIID_Intel_HD_Graphics.kext` to improve the Intel graphics.
-1. **Display** - Follow instructions for [Pixel Clock Patch](https://github.com/Floris497/mac-pixel-clock-patch-V2) and install SwitchResX for custom resolutions/refresh rate. You'll also need FakePCIID and FakePCIID_Intel_HD_Graphics.kext along with the GFX spoof.
-1. **Aux Audio** - For Realtek ALC1220 audio, add `AppleALC.kext` and `Lilu.kext` to the EFI partition.
-1. **Onboard HDMI Audio** - No fix yet
-1. **SSDT** - use this script for power management [here](https://github.com/Piker-Alpha/ssdtPRGen.sh)
-1. **iMessage** - [this guide](https://www.tonymacx86.com/threads/an-idiots-guide-to-imessage.196827/) still works
-1. **Bluetooth** - I bought a BCM94352Z from a Chinese vendor on eBay, it's has support drivers and it fits nicely in the GA-H270-WIFI motherboard M.2 WiFi spot. Add `BrcmFirmwareData.kext`, `BrcmPatchRAM2.kext` ([found here](https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/)), `FakePCIID_Broadcom_WiFi.kext` and `FakePCIID.kext` ([found here](https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/)) to your EFI partition. Follow the advice [here](https://zorrobyte.com/2016/12/26/how-to-bcm94352z-for-hackintosh-including-5ghz-patch-handoff-and-hotspot-macos-sierra/) for editing the `config.plist` for full support.
+
+- **Display** - Follow instructions for [Pixel Clock Patch](https://github.com/Floris497/mac-pixel-clock-patch-V2) and install SwitchResX for custom resolutions/refresh rate. You'll also need FakePCIID and FakePCIID_Intel_HD_Graphics.kext along with the GFX spoof.
+- **Aux Audio** - For Realtek ALC1220 audio, add `AppleALC.kext` and `Lilu.kext` to the EFI partition.
+- **Onboard HDMI Audio** - No fix yet
+- **SSDT** - use this script for power management [here](https://github.com/Piker-Alpha/ssdtPRGen.sh)
+- **iMessage** - [this guide](https://www.tonymacx86.com/threads/an-idiots-guide-to-imessage.196827/) still works
+- **Bluetooth** - I bought a BCM94352Z from a Chinese vendor on eBay, it's has support drivers and it fits nicely in the GA-H270-WIFI motherboard M.2 WiFi spot. Add `BrcmFirmwareData.kext`, `BrcmPatchRAM2.kext` ([found here](https://bitbucket.org/RehabMan/os-x-brcmpatchram/downloads/)), `FakePCIID_Broadcom_WiFi.kext` and `FakePCIID.kext` ([found here](https://bitbucket.org/RehabMan/os-x-fake-pci-id/downloads/)) to your EFI partition. Follow the advice [here](https://zorrobyte.com/2016/12/26/how-to-bcm94352z-for-hackintosh-including-5ghz-patch-handoff-and-hotspot-macos-sierra/) for editing the `config.plist` for full support.
+- **Automatically boot system drive** - In `config.plist` change the boot argument.
+```xml
+<key>Boot</key>
+<dict>
+    <key>DefaultVolume</key>
+    <string>TARS</string>
+    <key>Timeout</key>
+    <integer>3</integer>
+</dict>
+```
+An integer timeout of `0` will not automatically boot the drive.
