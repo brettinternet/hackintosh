@@ -65,11 +65,11 @@ Type|Item|
     :ooooooooooooooooooo+.      
       `:+oo+/:-..-:/+o+/-
 
-https://pcpartpicker.com/list/yyG8sJ
+https://pcpartpicker.com/list/NCPd2R
 
 @zorak
 ---------------------------------------
-+       OS: macOS Sierra 10.12.3
++       OS: macOS Sierra 10.12.5
 +    Model: iMac17,1
 +      CPU: Intel i7-7700 (8) @ 3.60GHz
 +     MOBO: Gigabyte GA-H270N-WIFI
