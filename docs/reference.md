@@ -1,4 +1,5 @@
----
+----
+
 - [Updating macOS](#updating-macos)
 - [Clover Theme](#clover-theme)
 - [SMBIOS](#smbios)
@@ -8,7 +9,8 @@
 - [SSDT](#ssdt)
 - [NVRAM](#nvram)
 - [BIOS settings](#bios-settings)
----
+
+----
 
 # Updating macOS
 1. Checkout release notes on tonymacx86.com and read comments to see general issues with upgrading macOS versions.
