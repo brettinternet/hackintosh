@@ -1,15 +1,22 @@
+---
 - [Updating macOS](#updating-macos)
 - [Clover Theme](#clover-theme)
 - [SMBIOS](#smbios)
 - [Kexts](#kexts)
 - [Backup](#backup)
+- [DSDT](#dsdt)
+- [SSDT](#ssdt)
 - [NVRAM](#nvram)
 - [BIOS settings](#bios-settings)
+---
 
 # Updating macOS
 1. Checkout release notes on tonymacx86.com and read comments to see general issues with upgrading macOS versions.
 1. Upgrade [Clover EFI Bootloader Installer](https://sourceforge.net/projects/cloverefiboot/)
 1. Download and replace the latest [kexts](./setup.md#what-you-need).
+    1. Especially make sure the [NVMe patch](https://github.com/RehabMan/patch-nvme) is supported
+    1. Delete the old system kext with `sudo rm -Rf /Library/Extensions/HackrNVMeFamily-10_12_5.kext`
+    1. [Copy](#ssdt) the new kext over
 1. Be prepared to troubleshoot
 1. Upgrade in the App Store
 
@@ -47,6 +54,14 @@ sudo touch /System/Library/Extensions
 sudo kextcache -update-volume /
 ```
 
+### Delete disfunctional kexts from Windows
+1. Run diskpart as admin
+1. `list disk` and `select disk X` (check disk management for disk number)
+1. `list partition` and `select partition X` (select the EFI partition)
+1. `assign letter=x` (choose a letter not in use)
+1. Windows rights prevent the drive from showing in File Explorer, but a good hack is to open Notepad as admin and do `File` > `open` and navigate to the drive's `EFI/Clover/kexts` to trick the Windows rights
+1. Delete the kext files from the open window
+
 # Backup
 [Backup/restore script here](https://github.com/corpnewt/EFI-Backup-Restore)
 
@@ -58,14 +73,31 @@ dd if=/dev/diskXsY of=/path/to/backup/efi.img
 ### HFS
 Time Machine to a separate drive. If that drive is a bootable then you can restore the EFI partition with `dd if=/path/to/backup/efi.img of=/dev/diskXsY` from another linux/macOS on another drive on the machine.
 
-You may also consider something like CCC which creates a bootable backup.
+
+### Create bootable backups or clone your drive
+
+1. Use [Carbon Copy Cloner](https://bombich.com/) to clone the drive to the new location.
+1. Install an EFI partition to the new drive with Clover Bootloader.
+1. Copy the EFI folder on the older drive to the new drive's EFI partition and replace the folder.
 
 
 # DSDT
-[What is DSDT?](http://wiki.osx86project.org/wiki/index.php/DSDT) This [here](https://clover-wiki.zetam.org/Fixing-DSDT) is also a good reference for understanding DSDT.
+[What is DSDT?](http://wiki.osx86project.org/wiki/index.php/DSDT) [This](https://clover-wiki.zetam.org/Fixing-DSDT) is also a good reference for understanding DSDT.
 
 Here's some good [introductory steps to DSDT](http://www.macbreaker.com/2014/03/how-to-edit-your-own-dsdt-with-maciasl.html) with maciASL.
 
+
+# SSDT
+
+## Create an SSDT for an NVMe device
+
+1. Install Windows on the NVMe device to locate the ACPI path of the device in the ACPI namespace.
+1. Read the BIOS device name of the NVM Express Controller in `Storage controllers`.
+1. Back in macOS, use MaciASL to create an `.aml` for your own SSDT using the code provided [here](https://www.tonymacx86.com/threads/guide-hackrnvmefamily-co-existence-with-ionvmefamily-using-class-code-spoof.210316/).
+1. Use [patch-nvme](https://github.com/RehabMan/patch-nvme) to install the `HackrNVMeFamily*.kext` to system kexts
+    1. `./patch_nvme.sh --spoof` to run the script
+    1. `sudo cp -R HackrNVMeFamily-10_12_5.kext /Library/Extensions`
+    1. `sudo kextcache -i /` to rebuild the kext cache
 
 # NVRAM
 

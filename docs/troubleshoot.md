@@ -10,6 +10,7 @@ Boot | panic at graphics load in verbose boot | Lift your pre-allocated DVMT - N
 Install | Installer error: `"This copy... is damaged, and can't be used...."` | I had this error with 10.12.4, install the 10.12.3 image instead (get DL link from CorpNewt group)
 Install | `"The installer payload failed signature check"` just before the installer finishes | use a different usb port OR you may need to fix your bios time
 Audio | various audio issues | answered [here](https://www.reddit.com/r/hackintosh/comments/4sil5p/audio_mechanic_old_patchfix_removal_applealc/)
+Boot | Kexts preventing boot | plug drive into Mac/Windows machine to [remove disfunctional kexts](./reference)
 
 
 # Guides
