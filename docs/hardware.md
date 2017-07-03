@@ -9,7 +9,9 @@ Type|Item|
 **Memory** | [Corsair Vengeance LPX 16GB (2 x 8GB) DDR4-3000 Memory](https://pcpartpicker.com/product/MYH48d/corsair-memory-cmk16gx4m2b3000c15)
 **Power Supply** | External PSU with [picoPSU 160W](https://www.amazon.com/Mini-Box-picoPSU-160-XT-Power-Mini-ITX-Supply/dp/B005TWE6B8/ref=as_li_ss_tl?ie=UTF8&psc=1&redirect=true&ref_=oh_aui_detailpage_o03_s01&linkCode=sl1&tag=that0d-20&linkId=82c5bc9df0cebe5121176577285cec54) and [150W AC/DC Power Adapter](https://www.amazon.com/gp/product/B01N3ASWZ0)
 **Storage** | [Samsung 960 EVO 250GB M.2 Solid State Drive](https://pcpartpicker.com/product/3kL7YJ/samsung-internal-hard-drive-mz75e250bam)
-**Case**| Realan W-80 Mini-ITX
+**Case**| Realan E-W60 Mini-ITX<sup>\*</sup>
+
+<sup>\*</sup>_I'm looking for a new case that's just a little taller (like the [E-W80](http://www.minicase.net/product_E-W80.html)). The E-W60 case doesn't leave enough push room between the Noctua fan and the case's cieling which causes it to occassional overheat when the cooler can't catch up._
 
 
 # 2016
