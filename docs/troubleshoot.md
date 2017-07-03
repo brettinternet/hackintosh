@@ -22,6 +22,7 @@ Boot | Kexts preventing boot | plug drive into Mac/Windows machine to [remove di
   - Use [this](https://github.com/toleda/audio_hdmi_100series/blob/master/%5BGuide%5D_HD5x0-hdmi_audio_(clover_or_ssdt).pdf) which has links to the `config.plist` that contains patches.
   - You'll have to add 3 `ACPI` edits and some `Devices -> Arbitrary` patches.
   - Then you need to add this [SSDT](https://github.com/toleda/audio_hdmi_100series/blob/master/ssdt_hdmi_hd5x0/ssdt_hdmi-hd530.zip) to `EFI -> CLOVER -> ACPI -> patched`.
+- [NVMe M.2 SSD Setup](https://www.tonymacx86.com/threads/guide-hackrnvmefamily-co-existence-with-ionvmefamily-using-class-code-spoof.210316/)
 
 # Additional Guides
 - Replace System Info image - `/Applications/Utilities/System Information.app/Contents/Resources/SystemLogo.tiff` (see [here](http://www.idownloadblog.com/2017/01/13/how-to-modify-about-this-mac-hackintosh/))
